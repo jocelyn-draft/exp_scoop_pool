@@ -27,9 +27,11 @@ feature {NONE} -- Initialization
 
 feature -- Access
 
+	count: INTEGER
+
 	status: STRING
 		do
-			Result := items.count.out + " items"
+			Result := count.out + " items"
 		end
 
 	capacity: INTEGER
@@ -100,7 +102,6 @@ feature -- Access
 						l_item := factory_new_separate_item (factory)
 						register_item (l_item)
 						items [pos] := l_item
-						busy_items [pos] := True
 					end
 				end
 				i := i + 1
@@ -109,6 +110,7 @@ feature -- Access
 				check overcapacity: False end
 --				Result := factory.new_separate_item
 			else
+				count := count + 1
 				busy_items [pos] := True
 				Result := l_item
 			end
@@ -137,6 +139,7 @@ feature -- Access
 			if i <= n then
 				pos := i
 				busy_items [pos] := False
+				count := count - 1
 --				items [pos] := Void
 			else
 				check known_item: False end

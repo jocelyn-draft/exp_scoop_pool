@@ -69,9 +69,9 @@ feature -- Execution
 				debug
 					print ("<#" + processor_id_from_object (Current).out + "> " + generator + "[" + id + "] going to store " + i.out + "%N")
 				end
---				store (buffer, "[" + id + "] " + i.out + "%N")
---				store (buffer, "[" + id + "] " + i.out + " Bis repetita%N")
---				store (buffer, "[" + id + "] " + i.out + " Non placent%N")
+				store (buffer, "[" + id + "] " + i.out + "%N")
+				store (buffer, "[" + id + "] " + i.out + " Bis repetita%N")
+				store (buffer, "[" + id + "] " + i.out + " Non placent%N")
 				debug
 					print ("<#" + processor_id_from_object (Current).out + "> " + generator + "[" + id + "] completed to store " + i.out + "%N")
 				end
